@@ -1,15 +1,10 @@
 import { useState } from "react";
 
-import Card from "./Card";
+import Card from "./cards/Card";
+import Cards from "./cards/Cards";
 
 const Game = (props) => {
-  const initialCards = [
-    { name: "Card 1", id: 1 },
-    { name: "Card 2", id: 2 },
-    { name: "Card 3", id: 3 },
-    { name: "Card 4", id: 4 },
-  ];
-  const [cards, setCards] = useState(initialCards);
+  const [cards, setCards] = useState(Cards);
 
   Array.prototype.shuffle = function () {
     // shuffle array using Fisher-Yates algorithm

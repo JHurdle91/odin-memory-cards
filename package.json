@@ -21,7 +21,15 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "no-extend-native": [
+        "error",
+        {
+          "exceptions": ["Array"]
+        }
+      ]
+    }
   },
   "browserslist": {
     "production": [

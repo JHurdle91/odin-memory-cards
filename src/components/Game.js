@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import Card from "./cards/Card";
 import Cards from "./cards/Cards";
+import { getBreedImageUrl, getRandomBreeds } from "./cards/DogAPI";
 
 const Game = (props) => {
   const [cards, setCards] = useState(Cards);
@@ -21,6 +22,9 @@ const Game = (props) => {
   };
 
   const { score } = props;
+
+  getRandomBreeds(12);
+  // TODO: use getRandomBreeds to make Cards
 
   return (
     <div className="Game">

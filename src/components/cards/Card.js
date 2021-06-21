@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 const Card = (props) => {
   const [clicked, setClicked] = useState(false);
-  const { name, score, onCardClicked } = props;
+  const { name, imageUrl, score, onCardClicked } = props;
 
   const handleCardClick = () => {
     onCardClicked(clicked);
@@ -19,6 +19,7 @@ const Card = (props) => {
     <div className="Card" onClick={handleCardClick}>
       <div>-----Card.js-----</div>
       <div>{name}</div>
+      <img src={imageUrl} alt={name} />
     </div>
   );
 };

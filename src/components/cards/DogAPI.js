@@ -28,12 +28,11 @@ const getBreedImageUrl = async (breedName) => {
     return entry.name === breedName;
   });
   const { imageUrl } = breed[0];
-  console.log({ imageUrl });
   return imageUrl;
 };
 
 const getRandomBreeds = async (n) => {
-  const breedData = await getSimplifiedBreedData();
+  const breedData = await getBreeds();
   let breeds = [];
   while (n > 0) {
     const index = Math.floor(Math.random() * breedData.length);
@@ -41,9 +40,26 @@ const getRandomBreeds = async (n) => {
     breeds = breeds.concat(breed);
     n--;
   }
-  console.log(breeds);
   return breeds;
 };
 
+const simplifyData = async (breeds) => {
+  breeds = await breeds;
+  const simplifiedData = breeds.map((breed) => {
+    const { id, name, image } = breed;
+    return {
+      id: id,
+      name: name,
+      imageUrl: image.url,
+    };
+  });
+  return simplifiedData;
+};
+
 export default getBreeds;
-export { getSimplifiedBreedData, getBreedImageUrl, getRandomBreeds };
+export {
+  getSimplifiedBreedData,
+  getBreedImageUrl,
+  getRandomBreeds,
+  simplifyData,
+};

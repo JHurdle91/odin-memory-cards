@@ -1,11 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Card from "./cards/Card";
-import Cards from "./cards/Cards";
-import { getBreedImageUrl, getRandomBreeds } from "./cards/DogAPI";
+import Cards, { dummyCards } from "./cards/Cards";
 
 const Game = (props) => {
-  const [cards, setCards] = useState(Cards);
+  const [cards, setCards] = useState(dummyCards);
+
+  // TODO: if score == 0, load new cards
+
+  useEffect(() => {
+    const getCards = async () => {
+      setCards(await Cards());
+    };
+    getCards();
+  }, []);
 
   Array.prototype.shuffle = function () {
     // shuffle array using Fisher-Yates algorithm
@@ -23,17 +31,16 @@ const Game = (props) => {
 
   const { score } = props;
 
-  getRandomBreeds(12);
-  // TODO: use getRandomBreeds to make Cards
-
   return (
     <div className="Game">
       <div>-----Game.js-----</div>
       {cards.map((card) => {
+        const { id, name, imageUrl } = card;
         return (
           <Card
-            name={card.name}
-            key={card.id}
+            key={id}
+            name={name}
+            imageUrl={imageUrl}
             score={score}
             onCardClicked={handleCardClick}
           />

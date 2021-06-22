@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/odin-memory-cards/static/css/main.b981ae52.chunk.css",
+    "main.js": "/odin-memory-cards/static/js/main.8073a621.chunk.js",
+    "main.js.map": "/odin-memory-cards/static/js/main.8073a621.chunk.js.map",
+    "runtime-main.js": "/odin-memory-cards/static/js/runtime-main.b83e9d86.js",
+    "runtime-main.js.map": "/odin-memory-cards/static/js/runtime-main.b83e9d86.js.map",
+    "static/js/2.1849d18c.chunk.js": "/odin-memory-cards/static/js/2.1849d18c.chunk.js",
+    "static/js/2.1849d18c.chunk.js.map": "/odin-memory-cards/static/js/2.1849d18c.chunk.js.map",
+    "index.html": "/odin-memory-cards/index.html",
+    "static/css/main.b981ae52.chunk.css.map": "/odin-memory-cards/static/css/main.b981ae52.chunk.css.map",
+    "static/js/2.1849d18c.chunk.js.LICENSE.txt": "/odin-memory-cards/static/js/2.1849d18c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b83e9d86.js",
+    "static/js/2.1849d18c.chunk.js",
+    "static/css/main.b981ae52.chunk.css",
+    "static/js/main.8073a621.chunk.js"
+  ]
+}

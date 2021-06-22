@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+import "../../styles/Card.css";
+
 const Card = (props) => {
   const [clicked, setClicked] = useState(false);
   const { name, imageUrl, score, onCardClicked } = props;
@@ -17,7 +19,6 @@ const Card = (props) => {
 
   return (
     <div className="Card" onClick={handleCardClick}>
-      <div>-----Card.js-----</div>
       <div>{name}</div>
       <img src={imageUrl} alt={name} />
     </div>

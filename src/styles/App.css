@@ -1,0 +1,28 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.App {
+	display: grid;
+	grid-template-columns: auto;
+	justify-content: center;
+}
+
+.Header {
+	display: grid;
+	grid-template-columns: auto;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+.Header div {
+	display: flex;
+	justify-content: center;
+}
+
+.scoreContainer h3 {
+	padding: 10px;
+	background: #EEE;
+	border: 1px solid black;
+}

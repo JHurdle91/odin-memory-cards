@@ -1,0 +1,24 @@
+.Game {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 1200px;
+}
+
+@media (max-width: 1200px) {
+	.Game {
+		width: 900px;
+	}
+}
+
+@media (max-width: 900px) {
+	.Game {
+		width: 600px;
+	}
+}
+
+@media (max-width: 600px) {
+	.Game {
+		width: 300px;
+	}
+}

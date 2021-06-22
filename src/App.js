@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Game from "./components/Game";
 
+import "./styles/App.css";
+
 function App() {
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);

@@ -9,36 +9,16 @@ const getBreeds = async () => {
   return breedData;
 };
 
-const getSimplifiedBreedData = async () => {
-  const breedData = await getBreeds();
-  const simplifiedData = breedData.map((breed) => {
-    const { id, name, image } = breed;
-    return {
-      id: id,
-      name: name,
-      imageUrl: image.url,
-    };
-  });
-  return simplifiedData;
-};
-
-const getBreedImageUrl = async (breedName) => {
-  const breedData = await getSimplifiedBreedData();
-  const breed = breedData.filter((entry) => {
-    return entry.name === breedName;
-  });
-  const { imageUrl } = breed[0];
-  return imageUrl;
-};
-
 const getRandomBreeds = async (n) => {
   const breedData = await getBreeds();
   let breeds = [];
   while (n > 0) {
     const index = Math.floor(Math.random() * breedData.length);
     const breed = breedData[index];
-    breeds = breeds.concat(breed);
-    n--;
+    if (!breeds.includes(breed)) {
+      breeds = breeds.concat(breed);
+      n--;
+    }
   }
   return breeds;
 };
@@ -57,9 +37,4 @@ const simplifyData = async (breeds) => {
 };
 
 export default getBreeds;
-export {
-  getSimplifiedBreedData,
-  getBreedImageUrl,
-  getRandomBreeds,
-  simplifyData,
-};
+export { simplifyData, getRandomBreeds };

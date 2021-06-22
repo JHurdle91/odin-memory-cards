@@ -1,17 +1,24 @@
 import { simplifyData, getRandomBreeds } from "./DogAPI";
 
+const n = 12;
+
 const Cards = async () => {
-  const breeds = await getRandomBreeds(4);
+  const breeds = await getRandomBreeds(n);
   const myCards = await simplifyData(breeds);
   return myCards;
 };
 
-const dummyCards = [
-  { id: 1, name: "Loading...", imageUrl: "" },
-  { id: 2, name: "Loading...", imageUrl: "" },
-  { id: 3, name: "Loading...", imageUrl: "" },
-  { id: 4, name: "Loading...", imageUrl: "" },
-];
+const dummyCards = () => {
+  const cards = [];
+  for (let i = 0; i < n; i++) {
+    cards[i] = {
+      id: i,
+      name: "Loading...",
+      imageUrl: "",
+    };
+  }
+  return cards;
+};
 
 export default Cards;
 export { dummyCards };

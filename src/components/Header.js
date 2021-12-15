@@ -12,6 +12,13 @@ const Header = (props) => {
         <h3>Score: {score}</h3>
         <h3>High Score: {highScore}</h3>
       </div>
+      <div className="Header">
+        <h4>
+          <a href="https://github.com/JHurdle91/odin-memory-cards">
+            Source Code
+          </a>
+        </h4>
+      </div>
     </div>
   );
 };

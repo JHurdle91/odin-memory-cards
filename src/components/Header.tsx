@@ -1,5 +1,11 @@
-const Header = (props) => {
-  const { score, highScore } = props;
+import React from 'react';
+
+type Props = {
+  score: number,
+  highScore: number,
+}
+
+const Header = ({score, highScore}: Props) => {
   return (
     <div className="Header">
       <div>

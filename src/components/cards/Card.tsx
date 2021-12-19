@@ -2,9 +2,15 @@ import { useState, useEffect } from "react";
 
 import "../../styles/Card.css";
 
-const Card = (props) => {
+type Props = {
+  name: string,
+  imageUrl: string,
+  score: number,
+  onCardClicked: Function,
+}
+
+const Card = ({name, imageUrl, score, onCardClicked}: Props) => {
   const [clicked, setClicked] = useState(false);
-  const { name, imageUrl, score, onCardClicked } = props;
 
   const handleCardClick = () => {
     onCardClicked(clicked);

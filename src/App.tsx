@@ -9,7 +9,7 @@ function App() {
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
 
-  const handleCardClick = (alreadyClicked) => {
+  const handleCardClick = (alreadyClicked: boolean) => {
     if (alreadyClicked) {
       // game over;
       setScore(0);

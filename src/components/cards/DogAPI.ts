@@ -1,5 +1,21 @@
 const API_KEY = "ca217401-8ae2-4cc7-b949-46bbfab5be7b";
 
+type Image = {
+  url: string,
+};
+
+type Breed = {
+  id: number,
+  name: string,
+  image: Image,
+};
+
+type Simplified = {
+  id: number,
+  name: string,
+  imageUrl: string,
+};
+
 const getBreeds = async () => {
   const response = await fetch(
     `https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`,
@@ -9,9 +25,9 @@ const getBreeds = async () => {
   return breedData;
 };
 
-const getRandomBreeds = async (n) => {
+const getRandomBreeds = async (n: number) => {
   const breedData = await getBreeds();
-  let breeds = [];
+  let breeds: Array<Breed> = [];
   while (n > 0) {
     const index = Math.floor(Math.random() * breedData.length);
     const breed = breedData[index];
@@ -23,9 +39,8 @@ const getRandomBreeds = async (n) => {
   return breeds;
 };
 
-const simplifyData = async (breeds) => {
-  breeds = await breeds;
-  const simplifiedData = breeds.map((breed) => {
+const simplifyData = (breeds: Array<Breed>) => {
+  const simplifiedData: Array<Simplified> = breeds.map((breed) => {
     const { id, name, image } = breed;
     return {
       id: id,

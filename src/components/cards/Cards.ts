@@ -4,8 +4,8 @@ const n = 12;
 
 const Cards = async () => {
   const breeds = await getRandomBreeds(n);
-  const myCards = await simplifyData(breeds);
-  return myCards;
+  const cards = simplifyData(breeds);
+  return cards;
 };
 
 const dummyCards = () => {

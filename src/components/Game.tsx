@@ -2,13 +2,17 @@ import { useState, useEffect } from "react";
 
 import Card from "./cards/Card";
 import Cards, { dummyCards } from "./cards/Cards";
-import shuffle from "../utils/Shuffle.js";
+import shuffle from "../utils/Shuffle";
 
 import "../styles/Game.css";
 
-const Game = (props) => {
+type Props = {
+  score: number,
+  onCardClicked: Function,
+};
+
+const Game = ({score, onCardClicked}: Props) => {
   const [cards, setCards] = useState(dummyCards());
-  const { score } = props;
 
   useEffect(() => {
     const getCards = async () => {
@@ -26,9 +30,9 @@ const Game = (props) => {
     }
   }, [score]);
 
-  const handleCardClick = (alreadyClicked) => {
-    props.onCardClicked(alreadyClicked);
-    setCards(cards.shuffle());
+  const handleCardClick = (alreadyClicked: boolean) => {
+    onCardClicked(alreadyClicked);
+    setCards(shuffle(cards));
   };
 
   return (
